@@ -14,5 +14,7 @@
             </dataSource>
         </environment>
     </environments>
-
+    <mappers>
+        <mapper resource="pack01/bean/Account.xml"/>
+    </mappers>
 </configuration>
