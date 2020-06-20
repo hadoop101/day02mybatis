@@ -21,4 +21,6 @@ public interface AccountDao {
     void save2(Account account);
 
     Account find(long l);
+
+    List<Account> findAll2();
 }

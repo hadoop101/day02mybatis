@@ -7,6 +7,17 @@ public class Account implements Serializable {
     private String account;
     private Double money;
 
+    //一个账户只能属于一个用户
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
     public Account() {
     }
 

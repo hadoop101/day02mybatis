@@ -66,4 +66,17 @@
     <select id="find" parameterType="long" resultType="account" useCache="true">
         select * from account where id = #{id}
     </select>
+    <select id="findAll2" resultMap="accountResultMap">
+        SELECT * FROM  account3 a  LEFT JOIN user3  u ON u.`uid`=a.`uid`;
+    </select>
+    <resultMap id="accountResultMap" type="account">
+            <id column="id" property="id"/>
+            <result column="account" property="account"/>
+            <result column="money" property="money"/>
+            <!-- private User user;-->
+        <association property="user" javaType="user" >
+                <id column="uid" property="uid"/>
+              <result column="uname" property="uname"/>
+        </association>
+    </resultMap>
 </mapper>

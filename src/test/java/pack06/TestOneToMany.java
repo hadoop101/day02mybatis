@@ -12,7 +12,7 @@ import java.util.List;
 
 public class TestOneToMany {
     @Test
-    public void test01(){
+    public void test01(){//1对多
         //1:获取会话（本质还是连接）
         SqlSession session = MySessionUtil.getSession();
         //2:查看会话  调用dao的增删改查
@@ -20,6 +20,16 @@ public class TestOneToMany {
         UserDao userDao= session.getMapper(UserDao.class);
         List<User> userList = userDao.findAll();//select
         System.out.println(userList);
+    }
+    @Test
+    public void test02(){//一个账户属于一个用户
+        //1:获取会话（本质还是连接）
+        SqlSession session = MySessionUtil.getSession();
+        //2:查看会话  调用dao的增删改查
+        //查出所有用户的所有账户信息
+        AccountDao accountDao= session.getMapper(AccountDao.class);
+        List<Account> list = accountDao.findAll2();//select
+        System.out.println(list);
     }
 
 
