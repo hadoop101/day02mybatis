@@ -17,4 +17,6 @@ public interface AccountDao {
     void search(Map<String, Object> map);
 
     void deleteByIds(List<Long> ids);
+
+    void save2(Account account);
 }

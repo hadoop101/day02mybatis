@@ -53,4 +53,17 @@ public class TestSql {
         dao.deleteByIds(ids);//delete
         session.commit();
     }
+    @Test
+    public void test04(){
+        //1:获取会话（本质还是连接）
+        SqlSession session = MySessionUtil.getSession();
+        //2:查看会话  调用dao的增删改查
+        AccountDao dao = session.getMapper(AccountDao.class);//生成接口的动态代理类 参1：接口
+        Account account = new Account();
+        account.setId(1005L);
+//        account.setAccount("tony");
+//        account.setMoney(33D);
+        dao.save2(account);//insert
+        session.commit();
+    }
 }

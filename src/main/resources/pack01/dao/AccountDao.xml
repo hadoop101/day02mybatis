@@ -39,4 +39,25 @@
                 #{item}
         </foreach>
     </delete>
+    <insert id="save2" parameterType="account">
+        insert into account (
+            <include refid="keys"></include>
+        )values(
+            <include refid="values"></include>
+        )
+    </insert>
+    <sql id="keys">
+        <trim suffixOverrides=",">
+            <if test="id != null"> id ,</if>
+            <if test="account != null"> account ,</if>
+            <if test="money != null"> money ,</if>
+        </trim>
+    </sql>
+    <sql id="values">
+        <trim suffixOverrides=",">
+            <if test="id != null"> #{id},</if>
+            <if test="account != null"> #{account} ,</if>
+            <if test="money != null"> #{money} ,</if>
+        </trim>
+    </sql>
 </mapper>
