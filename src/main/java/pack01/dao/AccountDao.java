@@ -20,5 +20,5 @@ public interface AccountDao {
 
     void save2(Account account);
 
-    void find(long l);
+    Account find(long l);
 }

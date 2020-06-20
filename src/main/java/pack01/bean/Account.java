@@ -1,6 +1,8 @@
 package pack01.bean;
 
-public class Account {
+import java.io.Serializable;
+
+public class Account implements Serializable {
     private Long id;
     private String account;
     private Double money;

@@ -3,6 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="pack01.dao.AccountDao">
+    <cache/>
     <select id="findAll" resultType="account">
         select * from account
     </select>
@@ -61,7 +62,7 @@
         </trim>
     </sql>
 
-    <select id="find" parameterType="long" resultType="account">
+    <select id="find" parameterType="long" resultType="account" useCache="true">
         select * from account where id = #{id}
     </select>
 </mapper>
