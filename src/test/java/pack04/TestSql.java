@@ -9,6 +9,7 @@ import pack01.util.MySessionUtil;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -39,5 +40,17 @@ public class TestSql {
 //        map.put("max",1000D);
 
         dao.search(map);//select
+    }
+    @Test
+    public void test03(){
+        //1:获取会话（本质还是连接）
+        SqlSession session = MySessionUtil.getSession();
+        //2:查看会话  调用dao的增删改查
+        AccountDao dao = session.getMapper(AccountDao.class);//生成接口的动态代理类 参1：接口
+        List<Long> ids=new ArrayList<Long>();
+        ids.add(3L);
+        ids.add(5L);
+        dao.deleteByIds(ids);//delete
+        session.commit();
     }
 }

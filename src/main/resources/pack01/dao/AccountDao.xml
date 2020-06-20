@@ -33,4 +33,10 @@
             <if test="max != null" > and money &lt; #{max} </if>
         </where>
     </select>
+    <delete id="deleteByIds" parameterType="list">
+        delete from account where id in
+        <foreach collection="list" open="(" close=")" separator="," item="item">
+                #{item}
+        </foreach>
+    </delete>
 </mapper>

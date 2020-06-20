@@ -15,4 +15,6 @@ public interface AccountDao {
     void update(Account account);
 
     void search(Map<String, Object> map);
+
+    void deleteByIds(List<Long> ids);
 }
