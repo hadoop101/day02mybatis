@@ -6,4 +6,19 @@
     <select id="findAll" resultType="pack01.bean.Account" >
             select * from account
     </select>
+    <select id="findAll2" resultMap="account2Map" >
+            select * from account2
+    </select>
+    <!--列名id2  account2 money2与成员变量名不 id account money一致-->
+    <resultMap id="account2Map" type="pack01.bean.Account">
+            <id property="id" column="id2"/>
+            <result property="money" column="money2"/>
+            <result property="account" column="account2"/>
+    </resultMap>
+    <insert id="save" parameterType="pack01.bean.Account"  >
+           insert into account values(#{id},#{account},#{money})
+    </insert>
+    <delete id="delete" parameterType="long"  >
+           delete from account where id = #{id}
+    </delete>
 </mapper>

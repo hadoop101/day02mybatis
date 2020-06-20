@@ -16,5 +16,6 @@
     </environments>
     <mappers>
         <mapper resource="pack01/bean/Account.xml"/>
+        <mapper resource="pack01/dao/AccountDao.xml"/>
     </mappers>
 </configuration>
