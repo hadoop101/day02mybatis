@@ -6,4 +6,10 @@
     <select id="findAll" resultType="pack01.bean.Account">
         select * from account
     </select>
+    <insert id="save" parameterType="pack01.bean.Account">
+        insert into account values(#{id},#{account},#{money})
+    </insert>
+    <delete id="deleteById" parameterType="long">
+        delete from account where id = #{id}
+    </delete>
 </mapper>
