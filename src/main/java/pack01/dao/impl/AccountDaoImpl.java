@@ -5,7 +5,7 @@ import pack01.dao.AccountDao;
 
 import java.util.List;
 
-public class AccountDaoImpl implements AccountDao {
+public class AccountDaoImpl {
     public List<Account> findAll() {
         return null;
     }
