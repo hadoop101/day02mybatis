@@ -19,4 +19,6 @@ public interface AccountDao {
     void deleteByIds(List<Long> ids);
 
     void save2(Account account);
+
+    void find(long l);
 }

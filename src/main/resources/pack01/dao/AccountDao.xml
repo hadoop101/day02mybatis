@@ -60,4 +60,8 @@
             <if test="money != null"> #{money} ,</if>
         </trim>
     </sql>
+
+    <select id="find" parameterType="long" resultType="account">
+        select * from account where id = #{id}
+    </select>
 </mapper>
